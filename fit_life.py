@@ -8,14 +8,9 @@ print(decor_line)
 print(greetings)
 print(decor_line)
 
-# 1. Знакомство
-
 # Собираем данные о пользователе (Имя, Возраст)
 user_name = input('Введите Ваше имя: ')
 user_age = int(input('Введите Ваш возраст: '))
-
-
-# 2. Сбор данных
 
 # Собираем данные о пользователе (Вес, Рост)
 user_weight = float(
@@ -24,9 +19,6 @@ user_weight = float(
 user_height = float(
     input('Введите Ваш рост в метрах (например, 1.81): ').replace(",", ".")
 )
-
-# 3. Логика расчетов (Функции как "черный ящик": используем арифметику)
-# Формула ИМТ: вес разделить на (рост в квадрате)
 
 # Рассчитываем Индекс Массы Тела (ИМТ)
 bmi = user_weight / (user_height ** 2)
@@ -42,8 +34,6 @@ water_ml = user_weight * WATER_PER_KG
 # Переводим в литры
 WATER_PER_L = 1000
 water_l = water_ml / WATER_PER_L
-
-# 4. Вывод красивого результата
 
 # Выводим готовый отчет пользователю
 print(decor_line)
