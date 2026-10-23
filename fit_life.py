@@ -37,7 +37,7 @@ water_l = water_ml / WATER_PER_L
 
 # Выводим готовый отчет пользователю
 print(decor_line)
-print(f"Отчет для пользователя: {user_name} ({user_age} г.)")
+print(f"Отчет для пользователя: {user_name.title()} ({user_age} г.)")
 print(f"Ваш Индекс Массы Тела (ИМТ): {bmi_rounded}")
 print(f"Рекомендуемая норма воды {water_l:.1f} л. в день")
 print(decor_line)
