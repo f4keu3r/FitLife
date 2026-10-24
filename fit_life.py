@@ -8,6 +8,7 @@ print(DECOR_LINE, GREETINGS, DECOR_LINE, sep='\n')
 
 # Собираем данные о пользователе (Имя, Возраст)
 user_name = input('Введите Ваше имя: ')
+name_title = user_name.title()
 user_age = int(input('Введите Ваш возраст: '))
 
 # Собираем данные о пользователе (Вес, Рост)
@@ -20,11 +21,10 @@ user_height = float(
 
 # Рассчитываем Индекс Массы Тела (ИМТ)
 bmi = user_weight / (user_height ** 2)
+
 # Задаем отдельную переменную ИМТ для вывода, на случай,
 # если понадобится промежуточное значение
 bmi_rounded = round(bmi, 1)
-
-# Подсчет воды: вес * 30 мл
 
 # Рассчитываем норму воды в миллилитрах
 WATER_PER_KG = 30
@@ -35,7 +35,7 @@ water_l = water_ml / WATER_PER_L
 
 # Выводим готовый отчет пользователю
 print(DECOR_LINE)
-print(f'Отчет для пользователя: {user_name.title()} ({user_age} г.)')
+print(f'Отчет для пользователя: {name_title} ({user_age} г.)')
 print(f'Ваш Индекс Массы Тела (ИМТ): {bmi_rounded}')
 print(f'Рекомендуемая норма воды {water_l:.1f} л. в день')
 print(DECOR_LINE)
