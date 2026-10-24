@@ -18,6 +18,29 @@ user_height = float(
     input('Введите Ваш рост в метрах (например, 1.81): ').replace(',', '.')
 )
 
+# Рассчитываем Индекс Массы Тела (ИМТ)
+bmi = user_weight / (user_height ** 2)
+# Задаем отдельную переменную ИМТ для вывода, на случай,
+# если понадобится промежуточное значение
+bmi_rounded = round(bmi, 1)
+
+# Подсчет воды: вес * 30 мл
+
+# Рассчитываем норму воды в миллилитрах
+WATER_PER_KG = 30
+water_ml = user_weight * WATER_PER_KG
+# Переводим в литры
+WATER_PER_L = 1000
+water_l = water_ml / WATER_PER_L
+
+# Выводим готовый отчет пользователю
+print(DECOR_LINE)
+print(f'Отчет для пользователя: {user_name.title()} ({user_age} г.)')
+print(f'Ваш Индекс Массы Тела (ИМТ): {bmi_rounded}')
+print(f'Рекомендуемая норма воды {water_l:.1f} л. в день')
+print(DECOR_LINE)
+print('Расчет окончен. Будьте здоровы!')
+
 
 # # Вводим функцию для проверки корректного ввода данных (Вес, Рост)
 # def get_correct_value(message):
@@ -51,26 +74,3 @@ user_height = float(
 # user_height = get_correct_value(
 #     'Введите Ваш рост в метрах (например, 1.81): '
 # )
-
-# Рассчитываем Индекс Массы Тела (ИМТ)
-bmi = user_weight / (user_height ** 2)
-# Задаем отдельную переменную ИМТ для вывода, на случай,
-# если понадобится промежуточное значение
-bmi_rounded = round(bmi, 1)
-
-# Подсчет воды: вес * 30 мл
-
-# Рассчитываем норму воды в миллилитрах
-WATER_PER_KG = 30
-water_ml = user_weight * WATER_PER_KG
-# Переводим в литры
-WATER_PER_L = 1000
-water_l = water_ml / WATER_PER_L
-
-# Выводим готовый отчет пользователю
-print(DECOR_LINE)
-print(f'Отчет для пользователя: {user_name.title()} ({user_age} г.)')
-print(f'Ваш Индекс Массы Тела (ИМТ): {bmi_rounded}')
-print(f'Рекомендуемая норма воды {water_l:.1f} л. в день')
-print(DECOR_LINE)
-print('Расчет окончен. Будьте здоровы!')
