@@ -1,12 +1,10 @@
 # Проект FitLife - MVP версия 1.0
 # Задаем переменные для приветствия и декоративного разделителя
-greetings = 'Доброго времени суток!'
-decor_line = '-' * 60
+GREETINGS = 'Доброго времени суток!'
+DECOR_LINE = '-' * 60
 
 # Оформляем вывод приветствия
-print(decor_line)
-print(greetings)
-print(decor_line)
+print(DECOR_LINE, GREETINGS, DECOR_LINE, sep='\n')
 
 # Собираем данные о пользователе (Имя, Возраст)
 user_name = input('Введите Ваше имя: ')
@@ -19,6 +17,40 @@ user_weight = float(
 user_height = float(
     input('Введите Ваш рост в метрах (например, 1.81): ').replace(",", ".")
 )
+
+
+# # Вводим функцию для проверки корректного ввода данных (Вес, Рост)
+# def get_correct_value(message):
+#     """
+#     Запрашивает у пользователя положительное число с плавающей точкой
+#     Повторяет ввод до тех пор, пока не будет получено правильное число
+#     больше нуля.
+#     Запятые автоматически заменяются на точки.
+#     Пробелы по краям убираются автоматически
+
+#     message: Текс для ввода
+#     float: Введенное пользователем число
+#     """
+#     while True:
+#         entered_value = input(message).replace(",", ".").strip()
+#         try:
+#             value = float(entered_value)
+#         except ValueError:
+#             print('Введите пожалуйста численное значение.')
+#             continue
+#         if value <= 0:
+#             print('Введите пожалуйста положительное численное значение')
+#             continue
+#         return value
+
+
+# # Собираем данные о пользователе (Вес, Рост)
+# user_weight = get_correct_value(
+#     'Введите Ваш вес в кг (например, 82): '
+# )
+# user_height = get_correct_value(
+#     'Введите Ваш рост в метрах (например, 1.81): '
+# )
 
 # Рассчитываем Индекс Массы Тела (ИМТ)
 bmi = user_weight / (user_height ** 2)
@@ -36,9 +68,9 @@ WATER_PER_L = 1000
 water_l = water_ml / WATER_PER_L
 
 # Выводим готовый отчет пользователю
-print(decor_line)
-print(f"Отчет для пользователя: {user_name.title()} ({user_age} г.)")
-print(f"Ваш Индекс Массы Тела (ИМТ): {bmi_rounded}")
-print(f"Рекомендуемая норма воды {water_l:.1f} л. в день")
-print(decor_line)
+print(DECOR_LINE)
+print(f'Отчет для пользователя: {user_name.title()} ({user_age} г.)')
+print(f'Ваш Индекс Массы Тела (ИМТ): {bmi_rounded}')
+print(f'Рекомендуемая норма воды {water_l:.1f} л. в день')
+print(DECOR_LINE)
 print('Расчет окончен. Будьте здоровы!')
